@@ -40,7 +40,7 @@
             this.btn_gewicht = new System.Windows.Forms.Button();
             this.lbl_fuehrerschein = new System.Windows.Forms.Label();
             this.lbl_gewicht = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_ausgabe = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -99,6 +99,7 @@
             this.btn_eingabe.TabIndex = 6;
             this.btn_eingabe.Text = "Eingabe";
             this.btn_eingabe.UseVisualStyleBackColor = true;
+            this.btn_eingabe.Click += new System.EventHandler(this.btn_eingabe_Click);
             // 
             // label4
             // 
@@ -113,19 +114,21 @@
             // 
             this.btn_fuehrerschein.Location = new System.Drawing.Point(64, 339);
             this.btn_fuehrerschein.Name = "btn_fuehrerschein";
-            this.btn_fuehrerschein.Size = new System.Drawing.Size(132, 32);
+            this.btn_fuehrerschein.Size = new System.Drawing.Size(147, 32);
             this.btn_fuehrerschein.TabIndex = 8;
             this.btn_fuehrerschein.Text = "Führerscheinpflicht";
             this.btn_fuehrerschein.UseVisualStyleBackColor = true;
+            this.btn_fuehrerschein.Click += new System.EventHandler(this.btn_fuehrerschein_Click);
             // 
             // btn_gewicht
             // 
             this.btn_gewicht.Location = new System.Drawing.Point(64, 377);
             this.btn_gewicht.Name = "btn_gewicht";
-            this.btn_gewicht.Size = new System.Drawing.Size(132, 32);
+            this.btn_gewicht.Size = new System.Drawing.Size(147, 32);
             this.btn_gewicht.TabIndex = 9;
             this.btn_gewicht.Text = "Gewicht";
             this.btn_gewicht.UseVisualStyleBackColor = true;
+            this.btn_gewicht.Click += new System.EventHandler(this.btn_gewicht_Click);
             // 
             // lbl_fuehrerschein
             // 
@@ -143,20 +146,20 @@
             this.lbl_gewicht.Size = new System.Drawing.Size(0, 16);
             this.lbl_gewicht.TabIndex = 11;
             // 
-            // textBox1
+            // txt_ausgabe
             // 
-            this.textBox1.Location = new System.Drawing.Point(278, 23);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(434, 254);
-            this.textBox1.TabIndex = 12;
+            this.txt_ausgabe.Location = new System.Drawing.Point(278, 23);
+            this.txt_ausgabe.Multiline = true;
+            this.txt_ausgabe.Name = "txt_ausgabe";
+            this.txt_ausgabe.Size = new System.Drawing.Size(434, 254);
+            this.txt_ausgabe.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 447);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_ausgabe);
             this.Controls.Add(this.lbl_gewicht);
             this.Controls.Add(this.lbl_fuehrerschein);
             this.Controls.Add(this.btn_gewicht);
@@ -190,7 +193,7 @@
         private System.Windows.Forms.Button btn_gewicht;
         private System.Windows.Forms.Label lbl_fuehrerschein;
         private System.Windows.Forms.Label lbl_gewicht;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_ausgabe;
     }
 }
 
