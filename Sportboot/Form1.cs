@@ -22,16 +22,12 @@ namespace Sportboot
         {
             InitializeComponent();
 
-            string content = "";
-
             if (File.Exists(filename))
             {
                 StreamReader myFile = new StreamReader(filename);
                 while (!myFile.EndOfStream)
                 {
-                    content = myFile.ReadLine();
-                    string[] split = content.Split(';');
-                    listeSportboote.Add(new Sportboot(Convert.ToInt16(split[0]), Convert.ToInt16(split[1]), Convert.ToInt16(split [2])));
+                    listeSportboote.Add(new Sportboot(myFile.ReadLine()));
                 }
                 myFile.Close();
             }

@@ -14,7 +14,15 @@ namespace Sportboot
         */
 
         public Sportboot() : this(111, 11, 11) { }
-        
+
+        public Sportboot(string pString)
+        {
+            string[] split = pString.Split(';');
+            Bootsnummer = Convert.ToInt16(split[0]);
+            Laenge = Convert.ToInt16(split[1]);
+            Motorleistung = Convert.ToInt16(split[2]);
+        }
+
         public Sportboot(int pBootsnummer, int pLaenge, int pMotorleistung)
         {
             Bootsnummer = pBootsnummer;
