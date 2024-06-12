@@ -27,6 +27,11 @@ namespace Sportboot
             return $"Bootsnummer: {Bootsnummer}, Länge: {Laenge} m, Motorleistung: {Motorleistung} kW";
         }
 
+        public string AusgabeCSV()
+        {
+            return $"{Bootsnummer};{Laenge};{Motorleistung}";
+        }
+
         private int Bootsnummer
         {
             get;

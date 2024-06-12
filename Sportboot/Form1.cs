@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,13 +16,28 @@ namespace Sportboot
         List<Sportboot> listeSportboote = new List<Sportboot>();
         Random random = new Random();
 
+        string filename = @"..\..\daten\Sportboote.csv";
+
         public Form1()
         {
             InitializeComponent();
 
-            for (int i = 0; i < 4; i++)
+            string content = "";
+
+            if (File.Exists(filename))
             {
-                listeSportboote.Add(new Sportboot(random.Next(100, 999), random.Next(7, 40), random.Next(5, 25)));
+                StreamReader myFile = new StreamReader(filename);
+                while (!myFile.EndOfStream)
+                {
+                    content = myFile.ReadLine();
+                    string[] split = content.Split(';');
+                    listeSportboote.Add(new Sportboot(Convert.ToInt16(split[0]), Convert.ToInt16(split[1]), Convert.ToInt16(split [2])));
+                }
+                myFile.Close();
+            }
+            else
+            {
+                MessageBox.Show("Datei zum einlesen nicht gefunden!");
             }
 
             Ausgabe();
@@ -35,7 +51,7 @@ namespace Sportboot
                 int laenge = Convert.ToInt16(txt_laenge.Text);
                 int leistung = Convert.ToInt16(txt_leistung.Text);
 
-                if(bootsnummer >= 100 && bootsnummer <= 999)
+                if (bootsnummer >= 100 && bootsnummer <= 999)
                 {
                     listeSportboote.Add(new Sportboot(bootsnummer, laenge, leistung));
                     Ausgabe();
@@ -73,6 +89,27 @@ namespace Sportboot
             txt_bootsnummer.Clear();
             txt_laenge.Clear();
             txt_leistung.Clear();
+        }
+
+        private void btn_speichern_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(filename))
+            {
+                StreamWriter myFile = new StreamWriter(filename);
+
+                foreach (Sportboot boot in listeSportboote)
+                {
+                    myFile.WriteLine(boot.AusgabeCSV());
+                }
+
+                myFile.Close();
+
+                MessageBox.Show("Gespeichert!");
+            }
+            else
+            {
+                MessageBox.Show("Datei zum speichern nicht gefunden!");
+            }
         }
     }
 }

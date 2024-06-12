@@ -41,6 +41,7 @@
             this.lbl_fuehrerschein = new System.Windows.Forms.Label();
             this.lbl_gewicht = new System.Windows.Forms.Label();
             this.txt_ausgabe = new System.Windows.Forms.TextBox();
+            this.btn_speichern = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -112,7 +113,7 @@
             // 
             // btn_fuehrerschein
             // 
-            this.btn_fuehrerschein.Location = new System.Drawing.Point(64, 339);
+            this.btn_fuehrerschein.Location = new System.Drawing.Point(49, 339);
             this.btn_fuehrerschein.Name = "btn_fuehrerschein";
             this.btn_fuehrerschein.Size = new System.Drawing.Size(147, 32);
             this.btn_fuehrerschein.TabIndex = 8;
@@ -122,7 +123,7 @@
             // 
             // btn_gewicht
             // 
-            this.btn_gewicht.Location = new System.Drawing.Point(64, 377);
+            this.btn_gewicht.Location = new System.Drawing.Point(49, 377);
             this.btn_gewicht.Name = "btn_gewicht";
             this.btn_gewicht.Size = new System.Drawing.Size(147, 32);
             this.btn_gewicht.TabIndex = 9;
@@ -154,11 +155,22 @@
             this.txt_ausgabe.Size = new System.Drawing.Size(434, 254);
             this.txt_ausgabe.TabIndex = 12;
             // 
+            // btn_speichern
+            // 
+            this.btn_speichern.Location = new System.Drawing.Point(565, 377);
+            this.btn_speichern.Name = "btn_speichern";
+            this.btn_speichern.Size = new System.Drawing.Size(147, 32);
+            this.btn_speichern.TabIndex = 13;
+            this.btn_speichern.Text = "Speichern";
+            this.btn_speichern.UseVisualStyleBackColor = true;
+            this.btn_speichern.Click += new System.EventHandler(this.btn_speichern_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 447);
+            this.Controls.Add(this.btn_speichern);
             this.Controls.Add(this.txt_ausgabe);
             this.Controls.Add(this.lbl_gewicht);
             this.Controls.Add(this.lbl_fuehrerschein);
@@ -194,6 +206,7 @@
         private System.Windows.Forms.Label lbl_fuehrerschein;
         private System.Windows.Forms.Label lbl_gewicht;
         private System.Windows.Forms.TextBox txt_ausgabe;
+        private System.Windows.Forms.Button btn_speichern;
     }
 }
 
